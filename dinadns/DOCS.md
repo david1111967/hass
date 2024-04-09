@@ -7,7 +7,7 @@ Follow these steps to get the add-on installed on your system:
 1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
 2. Find the "DuckDNS" add-on and click it.
 3. Click on the "INSTALL" button.
-
+<!-- 
 ## How to use
 
 1. Visit [DuckDNS.org](https://www.duckdns.org/) and create an account by logging in through any of the available account services (Google, Github, Twitter, Persona, Reddit).
@@ -15,7 +15,7 @@ Follow these steps to get the add-on installed on your system:
 3. If registration was a success, the subdomain is listed in the `Domains` section along with `current ip` being the public IP address of the device you are currently using to access `duckdns.org`. The IP address will be updated by the DuckDNS add-on.
 4. In the DuckDNS add-on configuration, perform the following:
     - Copy the DuckDNS token (listed at the top of the page where account details are displayed) from `duckdns.org` and paste into the `token` option.
-    - Update the `domains` option with the full domain name you registered. E.g., `my-domain.duckdns.org`.
+    - Update the `domains` option with the full domain name you registered. E.g., `my-domain.duckdns.org`. -->
 
 ## Configuration
 
@@ -81,7 +81,7 @@ If you specify a URL here, contents of the resource it points to will be
 fetched and used as the address. This enables getting the address using
 a service like https://api.ipify.org/ or https://ipv4.text.wtfismyip.com
 
-### Option: `ipv6` (optional)
+<!-- ### Option: `ipv6` (optional)
 
 By default, Duck DNS will auto detect your IPv6 address and use that.
 This option allows you to override the auto-detection and specify an
@@ -89,7 +89,7 @@ IPv6 address manually.
 
 If you specify a URL here, contents of the resource it points to will be
 fetched and used as the address. This enables getting the address using
-a service like https://api6.ipify.org/ or https://ipv6.text.wtfismyip.com
+a service like https://api6.ipify.org/ or https://ipv6.text.wtfismyip.com -->
 
 ### Option: `token`
 
@@ -109,10 +109,10 @@ For example:
 
 ```yaml
 domains:
-  - my-domain.duckdns.org
+  - my-domain.org
 aliases:
   - domain: ha.my-domain.com
-    alias: my-domain.duckdns.org
+    alias: my-domain.org
 ```
 
 Don't add your custom domain name to the `domains` array. For certificate creation, all unique domains and aliases are used.
@@ -126,17 +126,17 @@ CNAME                 <own-domain>                    <domain>.duckdns.org
 
 ### Option: `seconds`
 
-The number of seconds to wait before updating DuckDNS subdomains and renewing Let's Encrypt certificates.
+The number of seconds to wait before updating DinaDNS subdomains and renewing Let's Encrypt certificates.
 
-## Known issues and limitations
+<!-- ## Known issues and limitations
 
 - To log in, DuckDNS requires a free account from any of the following services: Google, Github, Twitter or Persona.
 - A free DuckDNS account is limited to five subdomains.
 - At time of writing, Duck DNS' own IPv6 autodetection
   [does not actually work][duckdns-faq], but you can use the URL option
-  for `ipv6` to get around this, read on.
+  for `ipv6` to get around this, read on. -->
 
-## Support
+<!-- ## Support
 
 Got questions?
 
@@ -146,7 +146,7 @@ You have several options to get them answered:
 - The Home Assistant [Community Forum][forum].
 - Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
 
-In case you've found a bug, please [open an issue on our GitHub][issue].
+In case you've found a bug, please [open an issue on our GitHub][issue]. -->
 
 [discord]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io
