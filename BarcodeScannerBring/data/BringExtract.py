@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import sys
-import BringApi
+import bringapi
 import pymongo
 
 class Database(object):
@@ -44,6 +44,6 @@ class BringExtract:
             for rownum in result:
                 if rownum['Codigo'] == self.codigo:
                     Nombre = rownum['Nombre']
-                    bring = BringApi.BringApi.login(self.user, self.password)
+                    bring = bringapi.BringApi(self.user, self.password)
                     bring.purchase_item(Nombre)
                     return Nombre
