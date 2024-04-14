@@ -5,5 +5,6 @@ FROM $BUILD_FROM
 COPY data/* /
 
 RUN pip install -r /requirement.txt
+RUN chmod a+x /run.sh
 
 CMD [ "/run.sh" ]
