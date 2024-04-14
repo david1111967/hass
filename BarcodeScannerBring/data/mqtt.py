@@ -21,9 +21,9 @@ class mqttBarScanner:
             Bring = BringExtract(str(message.payload, encoding='utf-8'), self.userBring, self.passBring)
             result = Bring.search()
             if (result == None):
-                client.publish("lector_codigo_barras/in", "Error 404")
+                client.publish("lector_codigo_barras/in/get", "Error 404")
             else:
-                client.publish("lector_codigo_barras/in", "" + result)
+                client.publish("lector_codigo_barras/in/get", "" + result)
             client.publish("lector_codigo_barras/out")
 
     def main(self):
