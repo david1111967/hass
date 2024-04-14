@@ -16,9 +16,10 @@ class mqttBarScanner:
         client.subscribe(topic='lector_codigo_barras/out', qos=2)
 
     def on_message(self, client, userdata, message):
-        if (str(message.payload, encoding='utf-8') != "" or str(message.payload, encoding='utf-8') != None):
-            print(str(message.payload, encoding='utf-8'))
-            Bring = BringExtract(str(message.payload, encoding='utf-8'), self.userBring, self.passBring)
+        codigo = str(message.payload, encoding='utf-8')
+        if (codigo != "" and codigo != None):
+            print(codigo)
+            Bring = BringExtract(codigo, self.userBring, self.passBring)
             result = Bring.search()
             if (result == None):
                 client.publish("lector_codigo_barras/in/get", "" + result)
