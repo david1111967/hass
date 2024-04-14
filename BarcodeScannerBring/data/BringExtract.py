@@ -42,8 +42,8 @@ class BringExtract:
         result = Database.find("openfoodfacts", query)
         if result != None:
             for rownum in result:
-                if rownum['Codigo'] == self.codigo:     
-                #bring = BringApi.BringApi(self.user", self.password, True)
-                #bring.purchase_item(rownum['Nombre'], "")
+                if rownum['Codigo'] == self.codigo:
                     Nombre = rownum['Nombre']
+                    bring = BringApi.login(self.user, self.password)
+                    bring.purchase_item(Nombre)
                     return Nombre
