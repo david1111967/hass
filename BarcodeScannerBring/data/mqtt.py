@@ -21,7 +21,7 @@ class mqttBarScanner:
             print(codigo)
             Bring = BringExtract(codigo, self.userBring, self.passBring)
             result = Bring.search()
-            if (result == None):
+            if (result != None):
                 client.publish("lector_codigo_barras/in/get", "" + result)
 
     def main(self):
