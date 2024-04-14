@@ -3,14 +3,16 @@ import paho.mqtt.client
 from BringExtract import BringExtract
 
 class mqttBarScanner:
-    def __init__(self, userMqtt, passMqtt, ipMqtt, portMqtt, userBring, passBring) -> None:
+    def __init__(self, userMqtt, passMqtt, ipMqtt, portMqtt, userBring, passBring, uri, database) -> None:
         self.userMqtt = userMqtt
         self.passMqtt = passMqtt
         self.ipMqtt = ipMqtt
         self.portMqtt = portMqtt
         self.userBring = userBring
         self.passBring = passBring
-    
+        self.uri = uri
+        self.database = database
+
     def on_connect(self, client, userdata, flags, rc):
         print('connected (%s)' % client._client_id)
         client.subscribe(topic='lector_codigo_barras/out', qos=2)
@@ -19,7 +21,7 @@ class mqttBarScanner:
         codigo = str(message.payload, encoding='utf-8')
         if (codigo != "" and codigo != None):
             print(codigo)
-            Bring = BringExtract(codigo, self.userBring, self.passBring)
+            Bring = BringExtract(codigo, self.userBring, self.passBring, self.uri, self.database)
             result = Bring.search()
             if (result != None):
                 client.publish("lector_codigo_barras/in/get", "" + result)

@@ -1,5 +1,5 @@
 ---
-version: 1.2.0
+version: 1.2.1
 slug: barcodescannerbring
 name: BarcodeScannerBring
 description: >-
@@ -22,6 +22,8 @@ options:
   portmqtt: null
   userbring: null
   passbring: null
+  uridatabase: null
+  namedatabase: null
 schema:
   usermqtt: str
   passmqtt: str
@@ -29,4 +31,6 @@ schema:
   portmqtt: str
   userbring: str
   passbring: str
+  uridatabase: str
+  namedatabase: str
 startup: services

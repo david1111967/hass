@@ -24,5 +24,13 @@ configuration:
     name: Password Bring
     description: >-
       Password para conectar Bring
+  uridatabase:
+    name: URI database
+    description: >-
+      URL de la database
+  namedatabase:
+    name: Nombre database
+    description: >-
+      Nombre de la database
 
   

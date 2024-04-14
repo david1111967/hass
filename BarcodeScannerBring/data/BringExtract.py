@@ -5,42 +5,42 @@ import pymongo
 import requests
 
 class Database(object):
-    URI = "mongodb://root:DV8kR2kQRWF4@nas.local:27017/"
-    DATABASE = "openfoodfacts"
+    def __init__(self, uri, database):
+        self.uri = uri
+        self.database = database
 
-    @staticmethod
-    def initialize():
-        Database.DATABASE = "openfoodfacts"
-        client = pymongo.MongoClient(Database.URI)
-        Database.DATABASE = client[Database.DATABASE]
+    def initialize(self):
+        self.database = "openfoodfacts"
+        client = pymongo.MongoClient(self.uri)
+        self.database = client[self.database]
 
-    @staticmethod
-    def insert (collection, data):
-        Database.DATABASE[collection].insert(data)
-        pymongo.MongoClient(Database.URI)
+    def insert (self, collection, data):
+        self.database[collection].insert(data)
+        pymongo.MongoClient(self.uri)
 
-    @staticmethod
-    def find(collection, query) :
-        result = Database.DATABASE[collection].find(query)
-        pymongo.MongoClient(Database.URI)
+    def find(self, collection, query) :
+        result = self.database[collection].find(query)
+        pymongo.MongoClient(self.uri)
         return result
 
-    @staticmethod
-    def find_one(collection, query) :
-        result = Database.DATABASE[collection].find_one(query)
-        pymongo.MongoClient(Database.URI)
+    def find_one(self, collection, query) :
+        result = self.database[collection].find_one(query)
+        pymongo.MongoClient(self.uri)
         return result
     
 class BringExtract:
-    def __init__(self, codigo, user, password):
+    def __init__(self, codigo, user, password, uri, database):
         self.codigo = codigo
         self.user = user
         self.password = password
+        self.uri = uri
+        self.database = database
 
     def search(self):
-        Database.initialize()
+        database = Database(self.uri, self.database)
+        database.initialize()
         query = {"Codigo": self.codigo}
-        result = Database.find("openfoodfacts", query)
+        result = database.find("openfoodfacts", query)
         if result != None:
             for rownum in result:
                 if rownum['Codigo'] == self.codigo:
