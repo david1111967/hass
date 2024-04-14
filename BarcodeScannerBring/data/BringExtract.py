@@ -44,6 +44,6 @@ class BringExtract:
             for rownum in result:
                 if rownum['Codigo'] == self.codigo:
                     Nombre = rownum['Nombre']
-                    bring = BringApi.login(self.user, self.password)
+                    bring = BringApi.BringApi.login(self.user, self.password)
                     bring.purchase_item(Nombre)
                     return Nombre
