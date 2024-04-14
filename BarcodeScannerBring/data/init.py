@@ -1,5 +1,5 @@
 import sys
-from .mqtt import mqttBarScanner
+from mqtt import mqttBarScanner
 
 userMqtt = str(sys.argv[1])
 passMqtt = str(sys.argv[2])

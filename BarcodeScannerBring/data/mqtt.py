@@ -1,6 +1,6 @@
 import sys
 import paho.mqtt.client
-from .BringExtract import BringExtract
+from BringExtract import BringExtract
 
 class mqttBarScanner:
     def __init__(self, userMqtt, passMqtt, ipMqtt, portMqtt, userBring, passBring) -> None:
