@@ -25,7 +25,7 @@ class mqttBarScanner:
             client.publish("lector_codigo_barras/in", "" + result)
 
     def main(self):
-        client = paho.mqtt.client.Client(client_id='API-Codigo_barras', clean_session=False)
+        client = paho.mqtt.client.Client(paho.mqtt.client.CallbackAPIVersion.VERSION1, client_id='API-Codigo_barras', clean_session=False)
         client.username_pw_set(username=self.userMqtt, password=self.passMqtt)
         client.connect(host=self.ipMqtt, port=self.portMqtt)
         client.on_connect = self.on_connect
