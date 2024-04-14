@@ -1,0 +1,31 @@
+---
+version: 1.0.0
+slug: barcodescannerbring
+name: BarcodeScannerBring
+description: >-
+  BarcodeScannerBring
+url: https://github.com/david1111967/hass/tree/main/BarcodeScannerBring
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+hassio_api: true
+init: false
+image: homeassistant/{arch}-addon-barcodescannerbring
+options:
+  usermqtt: null
+  passmqtt: null
+  ipmqtt: null
+  portmqtt: null
+  userbring: null
+  passbring: null
+schema:
+  usermqtt: str
+  passmqtt: str
+  ipmqtt: str
+  portmqtt: str
+  userbring: str
+  passbring: str
+startup: services

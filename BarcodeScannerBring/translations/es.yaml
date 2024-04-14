@@ -1,0 +1,28 @@
+---
+configuration:
+  usermqtt:
+    name: Usuario MQTT
+    description: >-
+      Usuario para conectar MQTT
+  passmqtt:
+    name: Password MQTT
+    description: >-
+      Password para conectar MQTT
+  ipmqtt:
+    name: IP MQTT
+    description: >-
+      IP para conectar MQTT
+  portmqtt:
+    name: Puerto MQTT
+    description: >-
+      Puerto para conectar MQTT
+  userbring:
+    name: Usuario Bring
+    description: >-
+      Usuario para conectar Bring
+  passbring:
+    name: Password Bring
+    description: >-
+      Password para conectar Bring
+
+  
