@@ -1,8 +1,10 @@
-usermqtt=$(bashio::config 'usermqtt')
-passmqtt=$(bashio::config 'passmqtt')
-ipmqtt=$(bashio::config 'ipmqtt')
-portmqtt=$(bashio::config 'portmqtt')
-userbring=$(bashio::config 'userbring')
-passbring=$(bashio::config 'passbring')
+#!/usr/bin/with-contenv bashio
 
-python init.py usermqtt passmqtt ipmqtt portmqtt userbring passbring
+USERMQTT=$(bashio::config 'usermqtt')
+PASSMQTT=$(bashio::config 'passmqtt')
+IPMQTT=$(bashio::config 'ipmqtt')
+PORTMQTT=$(bashio::config 'portmqtt')
+USERBRING=$(bashio::config 'userbring')
+PASSBRING=$(bashio::config 'passbring')
+
+python3 /init.py USERMQTT PASSMQTT IPMQTT PORTMQTT USERBRING PASSBRING
