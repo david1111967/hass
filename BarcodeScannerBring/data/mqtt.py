@@ -21,10 +21,7 @@ class mqttBarScanner:
             Bring = BringExtract(str(message.payload, encoding='utf-8'), self.userBring, self.passBring)
             result = Bring.search()
             if (result == None):
-                client.publish("lector_codigo_barras/in/get", "Error 404")
-            else:
                 client.publish("lector_codigo_barras/in/get", "" + result)
-            client.publish("lector_codigo_barras/out")
 
     def main(self):
         client = paho.mqtt.client.Client(paho.mqtt.client.CallbackAPIVersion.VERSION1, client_id='API-Codigo_barras', clean_session=False)
