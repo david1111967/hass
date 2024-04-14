@@ -14,6 +14,8 @@ arch:
 hassio_api: true
 init: false
 image: homeassistant/{arch}-addon-barcodescannerbring
+map:
+  - config:rw
 options:
   usermqtt: null
   passmqtt: null
