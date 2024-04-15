@@ -11,6 +11,9 @@ RUN apk add --no-cache openssl \
 # Copy data
 COPY data/*.sh /
 
+RUN mkdir -p /var/www/dehydrated
+RUN chmod 755 /var/www/dehydrated
+
 RUN chmod a+x /run.sh
 RUN chmod a+x /hooks.sh
 RUN chmod a+x /usr/bin/dehydrated
