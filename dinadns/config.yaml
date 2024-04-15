@@ -1,5 +1,5 @@
 ---
-version: 1.16.0
+version: 1.0.0
 slug: dinadns
 name: DinaDNS
 description: >-
@@ -42,5 +42,4 @@ schema:
     keyfile: str
   seconds: int
   ipv4: str?
-  # ipv6: str?
 startup: services
