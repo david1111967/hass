@@ -12,6 +12,7 @@ RUN apk add --no-cache openssl \
 COPY data/*.sh /
 
 RUN chmod a+x /run.sh
-RUN chmod a+x /run.sh
+RUN chmod a+x /hooks.sh
+RUN chmod a+x /usr/bin/dehydrated
 
 CMD [ "/run.sh" ]
